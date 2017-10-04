@@ -14,3 +14,12 @@
 .result {
   cursor: pointer;
 }
+
+.kao-btn {
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  .kao-btn {
+    margin-top: 5px;
+  }  
+}

@@ -30,7 +30,7 @@ YTK.apiPlay = (function() {
   },
   makeCard = function(rating, imgObj) {
     var $resultDiv = $('<div/>', {
-      class : 'result col-4',
+      class : 'result col-6 col-md-4',
       'data-moving' : 'false',
       click : function() {
         var moving = $(this).attr('data-moving');
