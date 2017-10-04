@@ -1,0 +1,16 @@
+.btn-area .btn {
+  margin: 5px 3px 5px 0;
+}
+
+.image {
+  padding: 10px;
+}
+
+.image img {
+  height: 200px;
+  width: 100%;
+}
+
+.result {
+  cursor: pointer;
+}
