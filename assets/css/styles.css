@@ -23,3 +23,29 @@
     margin-top: 5px;
   }  
 }
+
+p.label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.main-container {
+  flex: 1;
+}
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+body.rainbow {
+  background-image: url('../images/rainbowpoop.gif');
+}
+body.bw {
+ background-image: url('../images/blackandwhite.gif'); 
+ color: white;
+}

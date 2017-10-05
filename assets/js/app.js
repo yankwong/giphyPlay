@@ -6,6 +6,7 @@ YTK.apiPlay = (function() {
   topics = ['cat', 'dog'],
   giphyKey = 'gDuZhVfBtBZJTRApZL2OqJ49bxEOrN2W',
   giphyURL = 'https://api.giphy.com/v1/gifs/search',
+  filterStr = '',
   makeQuery = function(apiURL, paramObj) {
     return apiURL + '?' + $.param(paramObj);
   },
@@ -64,7 +65,7 @@ YTK.apiPlay = (function() {
       text: topicStr,
       class: 'btn btn-success',
       click: function() {
-        callAPI(makeQuery(giphyURL, {api_key : giphyKey, q : topicStr, limit : 10}),
+        callAPI(makeQuery(giphyURL, {api_key : giphyKey, q : (filterStr + ' ' + topicStr).trim(), limit : 10}),
           putResults)
       }
     });
@@ -75,7 +76,6 @@ YTK.apiPlay = (function() {
   },
   addBtn = function($txtBox) {
     var btnVal = $txtBox.val();
-
 
     $txtBox.val('');
 
@@ -97,7 +97,39 @@ YTK.apiPlay = (function() {
     $addBtn.on('click', function() {
       addBtn($txtBox);
     });
+  },
+  updateFilterLooks = function($activeBtn) {
+    var $filterBtns = $('.btn', '.filter-btns');
 
+    $filterBtns.removeClass('btn-info');
+    $filterBtns.addClass('btn-outline-info');
+    $activeBtn.removeClass('btn-outline-info');
+    $activeBtn.addClass('btn-info');
+  },
+  setFilter = function(str) {
+    filterStr = str;
+  },
+  updatePageBkg = function(str) {
+    $('body').attr('class', '');
+    if (str === 'rainbow') {
+      $('body').addClass('rainbow');
+    }
+    else if (str === 'bw') {
+      $('body').addClass('bw');
+    }
+  },
+  bindFilterBtns = function() {
+    var $filterBtns = $('.btn', '.filter-btns');
+
+    $filterBtns.on('click', function() {
+      var $this = $(this),
+          filterStr = $this.attr('data-filter');
+
+      updateFilterLooks($this);
+      updatePageBkg(filterStr);
+      setFilter(filterStr);
+
+    });
   },
   getBtnsFromTopics = function () {
     $.each(topics, function(index, value) {
@@ -107,6 +139,7 @@ YTK.apiPlay = (function() {
   initPage = function() {
     getBtnsFromTopics();
     bindAddBtn();
+    bindFilterBtns();
   };
 
 return {
