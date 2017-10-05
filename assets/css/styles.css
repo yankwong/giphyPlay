@@ -6,9 +6,11 @@
 }
 
 .btn-area .btn {
-  margin: 5px 3px 5px 0;
+  margin: 5px 5px 5px 0;
 }
-
+.rating {
+  padding: 5px 10px;
+}
 .image {
   padding: 10px;
 }
