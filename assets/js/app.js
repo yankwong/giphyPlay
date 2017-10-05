@@ -9,9 +9,13 @@ YTK.apiPlay = (function() {
   filterStr = '',
   outputTotals = 0,
   ratingStr = 'g',
+  putQuery = function(url) {
+    $('.api-url').html('<b>For Nerds: </b>' + url);
+  },
   makeQuery = function(apiURL, paramObj) {
-    console.log(apiURL + '?' + $.param(paramObj));
-    return apiURL + '?' + $.param(paramObj);
+    var url = apiURL + '?' + $.param(paramObj);
+    putQuery(url);
+    return url;
   },
   callAPI = function(url, callback) {
     $.ajax({

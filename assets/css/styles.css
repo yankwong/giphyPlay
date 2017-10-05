@@ -67,6 +67,14 @@ body.rainbow {
   background-image: url('../images/rainbowpoop.gif');
 }
 body.bw {
- background-image: url('../images/blackandwhite.gif'); 
- color: white;
+  background-image: url('../images/blackandwhite.gif'); 
+  color: white;
+}
+.api-url {
+  font-size: 12px;
+  margin: 10px 0;
+  padding: 0 10px;
+}
+.add-btn {
+  margin-bottom: 50px;
 }
