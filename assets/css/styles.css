@@ -1,3 +1,10 @@
+.red {
+  color: red;
+}
+.explain {
+  font-size: 10px;
+}
+
 .btn-area .btn {
   margin: 5px 3px 5px 0;
 }
@@ -29,7 +36,19 @@ p.label {
   font-size: 20px;
   margin-top: 20px;
 }
-
+.image img {
+  border: 3px solid grey;
+  border-radius: 5px;
+}
+img.common {
+  border-color: green;
+}
+img.uncommon {
+  border-color: purple;
+}
+img.rare {
+  border-color: gold;
+}
 .main-container {
   flex: 1;
 }
